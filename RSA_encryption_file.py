@@ -98,7 +98,7 @@ for s in encrypted_text.split(" "):
 print("Decrypted message : ", plain_text)
 print("\n")
 
-#encrypting file
+#encrypting .txt file
 
 path = input("Specify full file path to encrypt :")
 file = open(path)
