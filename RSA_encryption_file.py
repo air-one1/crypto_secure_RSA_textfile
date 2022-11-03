@@ -1,4 +1,4 @@
-rom random import *
+from random import *
 from time import *
 import math
 
