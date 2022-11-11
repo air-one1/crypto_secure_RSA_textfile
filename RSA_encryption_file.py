@@ -98,7 +98,7 @@ for s in encrypted_text.split(" "):
 print("Decrypted message : ", plain_text)
 print("\n")
 
-#encrypting .txt file
+#encrypting file
 
 path = input("Specify full file path to encrypt :")
 file = open(path)
@@ -119,18 +119,18 @@ encrypted_file.close()
 encrypted_file = open("encrypted_file.txt", "r")
 print("Encrypted file : \n")
 print(encrypted_file.read())
-file.close()
 print("\n")
 
 #decrypting file
-
 Verification = input("Input private key to decrypt : ")
 while Verification != str(d):
     print("Wrong private key...\n")
     Verification = input("Input private key to decrypt : ")
 decrypted_file = open("decrypted_file.txt", "w")
+f = open("encrypted_file.txt", "r")
+f1 = f.read()
 plain_text = ""
-for s in encrypted_file.read():
+for s in f1.split(" ") :
     for k in channel:
         m = 0
         for l in channel:
@@ -139,10 +139,11 @@ for s in encrypted_file.read():
                     plain_text = plain_text + l
                 break
             m += 1
-decrypted_file.write(str(plain_text))
+encrypted_file.close()
+f.close()
+decrypted_file.write(plain_text)
 decrypted_file.close()
 decrypted_file = open("decrypted_file.txt", "r")
 print("Decrypted file : \n")
 print(decrypted_file.read())
-encrypted_file.close()
 decrypted_file.close()
